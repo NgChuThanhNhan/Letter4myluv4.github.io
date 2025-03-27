@@ -3,7 +3,7 @@ var letterContent ="Chúc mừng sinh nhật em yêu! 💖 Hôm nay là ngày đ
     Yêu Trúc rất nhiều! 💕🎂✨"
 
 // Tốc độ viết chữ. Số càng nhỏ tốc độ càng nhanh. 50 là tốc độ khá phù hợp
-durationWrite =  
+durationWrite =  45
 
 // Hiệu ứng gõ chữ
 
@@ -11,7 +11,7 @@ function effectWrite () {
     var boxLetter = document.querySelector(".letterContent")
     letterContentSplited = letterContent.split("")
     
-    letterContentSplited.forEach((val, index) => {
+    letterContentSplited.forEach((val, index) => {    
         setTimeout(() => {
             boxLetter.innerHTML += val    
         }, durationWrite* index)
