@@ -1,8 +1,8 @@
 // Thay đổi nội dung bức thư ở đây
 var letterContent = "Chúc mừng sinh nhật em yêu! 💖 Hôm nay là ngày đặc biệt khi thiên thần của anh đến với thế giới này, mang theo ánh sáng rực rỡ vào cuộc đời anh. Anh thật may mắn và hạnh phúc khi có em bên cạnh, người đã làm cho mỗi ngày của anh trở nên ý nghĩa. Mọi khoảnh khắc bên em, từ nụ cười đến những phút giận dỗi, đều là kỷ niệm anh trân trọng. Anh mong em luôn hạnh phúc, khỏe mạnh và tràn đầy yêu thương. Cảm ơn em đã đến và làm cho cuộc sống của anh thêm tươi đẹp. Yêu Trúc rất nhiều! 💕🎂✨";
 
-// Tốc độ viết chữ. Số càng nhỏ tốc độ càng nhanh. 50 là tốc độ khá phù hợp
-durationWrite = 45;
+// Tốc độ viết chữ. Số càng nhỏ tốc độ càng nhanh
+var durationWrite = 45;
 
 // Hiệu ứng gõ chữ
 function effectWrite() {
@@ -17,10 +17,10 @@ function effectWrite() {
 }
 
 // Nhạc nền
-var audio = new Audio("music.mp3"); // Đảm bảo đường dẫn đúng
-audio.loop = true; // Phát lặp lại
+var audio = new Audio("audio/music.mp3"); // Đúng đường dẫn
+audio.loop = true; // Lặp lại nhạc
 
-// Chỉ phát nhạc khi người dùng click
+// Chỉ phát nhạc khi người dùng click lần đầu
 function playMusic() {
     audio.play().then(() => {
         console.log("Nhạc đang phát...");
@@ -28,7 +28,7 @@ function playMusic() {
         console.log("Trình duyệt chặn autoplay:", error);
     });
 
-    // Sau khi phát nhạc, xóa sự kiện click để tránh lặp lại
+    // Xóa sự kiện click sau khi nhạc bắt đầu phát
     document.removeEventListener("click", playMusic);
 }
 
